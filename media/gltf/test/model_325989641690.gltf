@@ -35,6 +35,7 @@
     "meshes" : [{"primitives" : [{"attributes" : {"POSITION" : 1, "NORMAL" : 2, "TEXCOORD_0" : 3}, "indices" : 0, "material" : 0, "mode" : 4}]}], 
     "nodes" : [{"mesh" : 0}, {"children" : [0]}], 
     "samplers" : [{"magFilter" : 9729, "minFilter" : 9987, "wrapS" : 10497, "wrapT" : 10497}], 
-    "scene" : 0, "scenes" : [{"nodes" : [1]}], 
+    "scene" : 0, 
+    "scenes" : [{"nodes" : [1]}], 
     "textures" : [{"sampler" : 0, "source" : 0}]
 }
