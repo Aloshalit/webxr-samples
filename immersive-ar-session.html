@@ -78,7 +78,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       solarSystem.scale = [1.2, 1.2, 1.2];
       solarSystem.translation = [0, 0.2, -3];
       //solarSystem.rotation = [0, 0, -1, 1];
-      scene.addNode(solarSystem);
+      //scene.addNode(solarSystem);
       // Still adding a skybox, but only for the benefit of the inline view.
       //let skybox = new SkyboxNode({url: 'media/gltf/test/scene_u9.glb'});
       //scene.addNode(skybox);
@@ -146,6 +146,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       function onSessionStarted(session) {
         session.addEventListener('end', onSessionEnded);
+        session.addEventListener('select', onSelect);
 
         if (session.isImmersive) {
           // When in 'immersive-ar' mode don't draw an opaque background because
@@ -178,6 +179,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           // Turn the background back on when we go back to the inlive view.
           //skybox.visible = true;
         }
+      }
+
+      function onSelect() {
+        scene.addNode(newFlower);
       }
 
       // Called every time a XRSession requests that a new frame be drawn.
