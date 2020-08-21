@@ -79,7 +79,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       //solarSystem.rotation = [0, 0, -1, 1];
       scene.addNode(solarSystem);
       // Still adding a skybox, but only for the benefit of the inline view.
-      let skybox = new SkyboxNode({url: 'media/gltf/test/scene_u9.glb'});
+      //let skybox = new SkyboxNode({url: 'media/gltf/test/scene_u9.glb'});
       //scene.addNode(skybox);
 
       function initXR() {
@@ -161,7 +161,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           if (session.isImmersive) {
             xrImmersiveRefSpace = refSpace;
           } else {
-            //inlineViewerHelper = new InlineViewerHelper(gl.canvas, refSpace);
+            inlineViewerHelper = new InlineViewerHelper(gl.canvas, refSpace);
           }
           session.requestAnimationFrame(onXRFrame);
         });
@@ -175,7 +175,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         if (event.session.isImmersive) {
           xrButton.setSession(null);
           // Turn the background back on when we go back to the inlive view.
-          skybox.visible = true;
+          //skybox.visible = true;
         }
       }
 

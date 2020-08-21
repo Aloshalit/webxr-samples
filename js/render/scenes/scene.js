@@ -242,7 +242,7 @@ export class Scene extends Node {
       return;
     }
 
-    gl.bindFramebuffer(gl.FRAMEBUFFER, layer.framebuffer);
+    //gl.bindFramebuffer(gl.FRAMEBUFFER, layer.framebuffer);
 
     if (this.clear) {
       gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
