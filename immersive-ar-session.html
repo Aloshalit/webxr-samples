@@ -77,6 +77,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       solarSystem.scale = [0.5, 0.5, 0.5];
       solarSystem.translation = [0, 0, -1];
       solarSystem.rotation = [0, 0.5, -1, 1];
+      scene.addNode(solarSystem);
       // Still adding a skybox, but only for the benefit of the inline view.
       let skybox = new SkyboxNode({url: 'media/gltf/test/scene_u9.glb'});
       //scene.addNode(skybox);
