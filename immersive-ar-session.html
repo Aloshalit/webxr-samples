@@ -70,12 +70,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let gl = null;
       let renderer = null;
       let scene = new Scene();
-        let solarSystem = new Gltf2Node({url: 'media/gltf/test/scene_u9.glb'});
-        // The solar system is big (citation needed). Scale it down so that users
-        // can move around the planets more easily.
-        solarSystem.scale = [0.5, 0.5, 0.5];
-        solarSystem.translation = [0, 0, -1];
-        solarSystem.rotation = [0, 0.5, -1, 1];
+      let solarSystem = new Gltf2Node({url: 'media/gltf/test/scene_u10.glb'});
+      // The solar system is big (citation needed). Scale it down so that users
+      // can move around the planets more easily.
+      solarSystem.scale = [0.5, 0.5, 0.5];
+      solarSystem.translation = [0, 0, -1];
+      solarSystem.rotation = [0, 0.5, -1, 1];
       // Still adding a skybox, but only for the benefit of the inline view.
       let skybox = new SkyboxNode({url: 'media/gltf/test/scene_u9.glb'});
       //scene.addNode(skybox);
