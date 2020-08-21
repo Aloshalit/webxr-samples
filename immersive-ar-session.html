@@ -71,10 +71,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let gl = null;
       let renderer = null;
       let scene = new Scene();
+      scene.enableStats(false);
       let solarSystem = new Gltf2Node({url: 'media/gltf/test/scene_u12.glb'});
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
-      //solarSystem.scale = [0.2, 0.2, 0.2];
+      solarSystem.scale = [1.1, 1.1, 1.1];
       solarSystem.translation = [0, 0, -3];
       //solarSystem.rotation = [0, 0, -1, 1];
       scene.addNode(solarSystem);
@@ -175,7 +176,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         if (event.session.isImmersive) {
           xrButton.setSession(null);
           // Turn the background back on when we go back to the inlive view.
-          //skybox.visible = true;
+          skybox.visible = true;
         }
       }
 
