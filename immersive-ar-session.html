@@ -89,7 +89,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           textExitXRTitle: "EXIT  AR",
         });
         document.querySelector('header').appendChild(xrButton.domElement);
-        document.querySelector('body').appendChild(<Button onClick={placeElement}>PIN</Button>);
+        //document.querySelector('body').appendChild(<Button onClick={placeElement}>PIN</Button>);
 
         if (navigator.xr) {
           // Checks to ensure that 'immersive-ar' mode is available, and only
@@ -102,9 +102,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         }
       }
 
-      function placeElement() {
-        scene.addNode(solarSystem);
-      }
+      // function placeElement() {
+      //   scene.addNode(solarSystem);
+      // }
 
       function onRequestSession() {
         // Requests an 'immersive-ar' session, which ensures that the users
