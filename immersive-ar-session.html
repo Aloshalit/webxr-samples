@@ -83,8 +83,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       //let skybox = new SkyboxNode({url: 'media/gltf/test/scene_u9.glb'});
       //scene.addNode(skybox);
       let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle.gltf'});
+      reticle.rotation = [0, 0, -1, 1];
       reticle.scale = [0.8, 0.8, 0.8];
-      reticle.translation = [0, 0.2, -3];
+      reticle.translation = [0, 0.2, -2];
       reticle.visible = true;
       scene.addNode(reticle);
 
