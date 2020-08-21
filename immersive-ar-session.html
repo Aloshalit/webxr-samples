@@ -45,6 +45,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         </p>
       </details>
     </header>
+    <button onclick="placeElement()">PIN</button>
     <script type="module">
       import {WebXRButton} from './js/util/webxr-button.js';
       import {Scene} from './js/render/scenes/scene.js';
@@ -102,9 +103,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         }
       }
 
-      // function placeElement() {
-      //   scene.addNode(solarSystem);
-      // }
+      function placeElement() {
+        scene.addNode(solarSystem);
+      }
+      document.querySelector('header').appendChild(xrButton.domElement);
 
       function onRequestSession() {
         // Requests an 'immersive-ar' session, which ensures that the users
