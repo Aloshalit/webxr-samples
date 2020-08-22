@@ -1,7 +1,6 @@
 body {
   margin: 0px;
   padding: 0px;
-  background: #000;
 }
 
 #vid_container {
@@ -60,44 +59,45 @@ button {
 }
 
 #takePhotoButton {
-  left: calc(50% - 40px);
-  top: calc(50% - 40px);
-  width: 80px;
-  height: 80px;
+  /* left: calc(50% - 40px);
+  top: calc(50% - 40px); */
+  display: none;
+  width: 1px;
+  height: 1px;
   background-image: url('img/ic_photo_camera_white_48px.svg');
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-#takePhotoButton:active {
+/* #takePhotoButton:active {
   background-color: #fff;
-}
+} */
 
 #toggleFullScreenButton {
   display: none;
-  width: 64px;
-  height: 64px;
+  width: 1px;
+  height: 1px;
   background-image: url('img/ic_fullscreen_white_48px.svg');
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-#toggleFullScreenButton[aria-pressed='true'] {
+/* #toggleFullScreenButton[aria-pressed='true'] {
   background-image: url('img/ic_fullscreen_exit_white_48px.svg');
-}
+} */
 
 #switchCameraButton {
   display: none;
-  width: 64px;
-  height: 64px;
+  width: 1px;
+  height: 1px;
   background-image: url('img/ic_camera_rear_white_36px.svg');
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-#switchCameraButton[aria-pressed='true'] {
+/* #switchCameraButton[aria-pressed='true'] {
   background-image: url('img/ic_camera_front_white_36px.svg');
-}
+} */
 
 @media screen and (orientation: portrait) {
   /* portrait-specific styles */
@@ -107,10 +107,10 @@ button {
     */
   #vid_container {
     width: 100%;
-    height: 80%;
+    height: 100%;
   }
 
-  #gui_controls {
+  /* #gui_controls {
     width: 100%;
     height: 20%;
     left: 0;
@@ -124,28 +124,28 @@ button {
   #toggleFullScreenButton {
     left: calc(80% - 32px);
     top: calc(50% - 32px);
-  }
+  } */
 }
 
 @media screen and (orientation: landscape) {
   #vid_container {
-    width: 80%;
+    width: 100%;
     height: 100%;
   }
 
-  #vid_container.left {
+  /* #vid_container.left {
     left: 20%;
-  }
+  } */
 
   /* we default to right */
-  #gui_controls {
+  /* #gui_controls {
     width: 20%;
     height: 100%;
     right: 0;
-  }
+  } */
 
   /* for the lefties */
-  #gui_controls.left {
+  /* #gui_controls.left {
     left: 0;
   }
 
@@ -157,5 +157,5 @@ button {
   #toggleFullScreenButton {
     left: calc(50% - 32px);
     top: calc(82% - 32px);
-  }
+  } */
 }
