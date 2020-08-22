@@ -84,7 +84,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       //scene.addNode(skybox);
       let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle.gltf'});
       reticle.rotation = [1.5, 0, 0, 1];
-      reticle.scale = [0.4, 0.4, 0.4];
+      reticle.scale = [0.4, 0.3, 0.4];
       reticle.translation = [0, 0.2, -2];
       reticle.visible = true;
       scene.addNode(reticle);
@@ -191,6 +191,15 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         scene.addNode(solarSystem);
         reticle.visible = false;
         session.isImmersive = true;
+        let refSpaceType = session.isImmersive ? 'local' : 'viewer';
+        session.requestReferenceSpace(refSpaceType).then((refSpace) => {
+          if (session.isImmersive) {
+            xrImmersiveRefSpace = refSpace;
+          } else {
+            inlineViewerHelper = new InlineViewerHelper(gl.canvas, refSpace);
+          }
+          //session.requestAnimationFrame(onXRFrame);
+        });
       }
 
       // Called every time a XRSession requests that a new frame be drawn.
