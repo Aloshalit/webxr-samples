@@ -124,7 +124,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         return navigator.xr.requestSession('immersive-ar')
             .then((session) => {
               xrButton.setSession(session);
-              session.isImmersive = true;
+              //session.isImmersive = true;
               onSessionStarted(session);
             });
       }
@@ -190,6 +190,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       function onSelect() {
         scene.addNode(solarSystem);
         reticle.visible = false;
+        session.isImmersive = true;
       }
 
       // Called every time a XRSession requests that a new frame be drawn.
