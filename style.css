@@ -18,10 +18,11 @@ body {
 }
 
 #gui_controls {
-  display: none;
+  //display: none;
   position: fixed;
   background-color: #111; /*rgba(255, 0, 0, 0.5);*/
   //z-index: 2;
+  height: 1px;
   bottom: 0;
 }
 
