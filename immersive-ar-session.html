@@ -38,7 +38,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         <p>
           This sample demonstrates how to use an 'immersive-ar' XRSession to
           present a simple WebGL scene to an transparent or passthrough XR
-          device. 4
+          device. 6
           <a class="back" href="./">Back</a>
         </p>
       </details>
@@ -60,6 +60,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         let polyfill = new WebXRPolyfill();
       }
 
+      let localRef = false;
       // XR globals.
       let xrButton = null;
       let xrImmersiveRefSpace = null;
@@ -123,7 +124,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         return navigator.xr.requestSession('immersive-ar')
             .then((session) => {
               xrButton.setSession(session);
-              //session.isImmersive = true;
+              session.isImmersive = true;
               onSessionStarted(session);
             });
       }
@@ -197,13 +198,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         scene.addNode(solarSystem);
         //xrImmersiveRefSpace = inlineViewerHelper.referenceSpace;
         reticle.visible = false;
-        session.isImmersive = true;
+        //session.isImmersive = true;
+        localRef = true
       }
 
       // Called every time a XRSession requests that a new frame be drawn.
       function onXRFrame(t, frame) {
         let session = frame.session;
-        let refSpace = session.isImmersive ?
+        let refSpace = localRef ? //session.isImmersive ?
                          xrImmersiveRefSpace :
                          inlineViewerHelper.referenceSpace;
         let pose = frame.getViewerPose(refSpace);
