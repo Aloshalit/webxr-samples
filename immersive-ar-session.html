@@ -106,7 +106,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             xrButton.enabled = supported;
           });
 
-          //navigator.xr.requestSession('inline').then(onSessionStarted);
+          navigator.xr.requestSession('inline').then(onSessionStarted);
 
         }
       }
@@ -136,6 +136,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
         gl = createWebGLContext({
           xrCompatible: true,
+          alpha: true
         });
         document.body.appendChild(gl.canvas);
 
