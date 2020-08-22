@@ -75,7 +75,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let solarSystem = new Gltf2Node({url: 'media/gltf/test/scene_u12.glb'});
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
-      solarSystem.scale = [1.2, 1.2, 1.2];
+      solarSystem.scale = [1.1, 1.1, 1.1];
       solarSystem.translation = [0, 0.2, -3];
       //solarSystem.rotation = [0, 0, -1, 1];
       //scene.addNode(solarSystem);
@@ -83,8 +83,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       //let skybox = new SkyboxNode({url: 'media/gltf/test/scene_u9.glb'});
       //scene.addNode(skybox);
       let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle.gltf'});
-      reticle.rotation = [0, 0, -1, 1];
-      reticle.scale = [0.8, 0.8, 0.8];
+      reticle.rotation = [1.5, 0, 0, 1];
+      reticle.scale = [0.4, 0.4, 0.4];
       reticle.translation = [0, 0.2, -2];
       reticle.visible = true;
       scene.addNode(reticle);
