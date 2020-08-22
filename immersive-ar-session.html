@@ -38,7 +38,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         <p>
           This sample demonstrates how to use an 'immersive-ar' XRSession to
           present a simple WebGL scene to an transparent or passthrough XR
-          device. 13
+          device. 14
           <a class="back" href="./">Back</a>
         </p>
       </details>
@@ -106,7 +106,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             xrButton.enabled = supported;
           });
 
-          navigator.xr.requestSession('inline').then(onSessionStarted);
+          //navigator.xr.requestSession('inline').then(onSessionStarted);
 
         }
       }
@@ -136,7 +136,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
         gl = createWebGLContext({
           xrCompatible: true,
-          alpha: true
         });
         document.body.appendChild(gl.canvas);
 
