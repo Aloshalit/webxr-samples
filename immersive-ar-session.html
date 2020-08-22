@@ -38,7 +38,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         <p>
           This sample demonstrates how to use an 'immersive-ar' XRSession to
           present a simple WebGL scene to an transparent or passthrough XR
-          device. 2
+          device. 3
           <a class="back" href="./">Back</a>
         </p>
       </details>
@@ -105,7 +105,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             xrButton.enabled = supported;
           });
 
-          navigator.xr.requestSession('immersive-ar').then((session) => {
+          navigator.xr.requestSession('inline').then((session) => {
               onSessionStarted(session);
             });
         }
@@ -124,7 +124,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         return navigator.xr.requestSession('immersive-ar')
             .then((session) => {
               xrButton.setSession(session);
-              session.isImmersive = true;
+              //session.isImmersive = true;
               onSessionStarted(session);
             });
       }
@@ -165,12 +165,17 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         session.updateRenderState({ baseLayer: new XRWebGLLayer(session, gl) });
 
         let refSpaceType = session.isImmersive ? 'local' : 'viewer';
-        session.requestReferenceSpace(refSpaceType).then((refSpace) => {
-          if (session.isImmersive) {
+        session.requestReferenceSpace('local').then((refSpace) => {
             xrImmersiveRefSpace = refSpace;
-          } else {
-            inlineViewerHelper = new InlineViewerHelper(gl.canvas, refSpace);
-          }
+          // if (session.isImmersive) {
+          //   xrImmersiveRefSpace = refSpace;
+          // } else {
+          //   inlineViewerHelper = new InlineViewerHelper(gl.canvas, refSpace);
+          // }
+          // session.requestAnimationFrame(onXRFrame);
+        });
+        session.requestReferenceSpace('viewer').then((refSpace) => {
+          inlineViewerHelper = new InlineViewerHelper(gl.canvas, refSpace);
           session.requestAnimationFrame(onXRFrame);
         });
       }
