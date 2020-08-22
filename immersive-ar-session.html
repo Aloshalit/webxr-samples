@@ -125,6 +125,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             .then((session) => {
               xrButton.setSession(session);
               session.isImmersive = true;
+              localRef = true;
               onSessionStarted(session);
             });
       }
@@ -200,8 +201,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         reticle.visible = false;
         //session.isImmersive = true;
         localRef = true;
-        await session.end();
-        onRequestSession();
+        //await session.end();
+        //onRequestSession();
       }
 
       // Called every time a XRSession requests that a new frame be drawn.
