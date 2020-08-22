@@ -38,7 +38,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         <summary>הנחיות</summary>
         <p>
             כוונו את המצלמה בקו ישר, ממרחק של שני מטרים, למקום בן יהיה תלוי הפריט ולחצו על ״מקם״.
-            8
+            9
           <a class="back" href="./">Back</a>
         </p>
       </details>
@@ -84,7 +84,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         let polyfill = new WebXRPolyfill();
       }
 
-      let localRef = false;
       // XR globals.
       let xrButton = null;
       let xrImmersiveRefSpace = null;
@@ -107,8 +106,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       //scene.addNode(skybox);
       let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle.gltf'});
       reticle.rotation = [1.5, 0, 0, 1];
-      reticle.scale = [0.4, 0.4, 0.4];
-      reticle.translation = [0, 0.2, -2];
+      reticle.scale = [0.4, 0.25, 0.4];
+      reticle.translation = [0, 0.21, -2];
       reticle.visible = true;
       scene.addNode(reticle);
 
@@ -149,7 +148,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             .then((session) => {
               xrButton.setSession(session);
               session.isImmersive = true;
-              localRef = true;
+              scene.addNode(solarSystem);
+              reticle.visible = false;
               onSessionStarted(session);
             });
       }
@@ -190,17 +190,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
         session.updateRenderState({ baseLayer: new XRWebGLLayer(session, gl) });
 
-        let refSpaceType = (session.isImmersive && localRef) ? 'local' : 'viewer';
-        // session.requestReferenceSpace('viewer').then((refSpace) => {
-        //   inlineViewerHelper = new InlineViewerHelper(gl.canvas, refSpace);
-        //   session.requestAnimationFrame(onXRFrame);
-        // });
+        let refSpaceType = session.isImmersive ? 'local' : 'viewer';
         session.requestReferenceSpace(refSpaceType).then((refSpace) => {
-            //xrImmersiveRefSpace = refSpace;
-            //inlineViewerHelper = new InlineViewerHelper(gl.canvas, refSpace);
-          if (session.isImmersive && localRef) {
+          if (session.isImmersive) {
             xrImmersiveRefSpace = refSpace;
-            //alert(inlineViewerHelper.referenceSpace);
           } else {
             inlineViewerHelper = new InlineViewerHelper(gl.canvas, refSpace);
           }
@@ -220,20 +213,19 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         }
       }
 
-      async function onSelect() {
-        scene.addNode(solarSystem);
-        //xrImmersiveRefSpace = inlineViewerHelper.referenceSpace;
-        reticle.visible = false;
-        //session.isImmersive = true;
-        localRef = true;
-        //await session.end();
-        //onRequestSession();
-      }
+      // async function onSelect() {
+      //   scene.addNode(solarSystem);
+      //   reticle.visible = false;
+      //   xrImmersiveRefSpace = inlineViewerHelper.referenceSpace;
+      //   session.isImmersive = true;
+      //   await session.end();
+      //   onRequestSession();
+      // }
 
       // Called every time a XRSession requests that a new frame be drawn.
       function onXRFrame(t, frame) {
         let session = frame.session;
-        let refSpace = (session.isImmersive && localRef) ? //session.isImmersive ?
+        let refSpace = session.isImmersive ? //session.isImmersive ?
                          xrImmersiveRefSpace :
                          inlineViewerHelper.referenceSpace;
         let pose = frame.getViewerPose(refSpace);
