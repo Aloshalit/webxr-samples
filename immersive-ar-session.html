@@ -105,9 +105,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             xrButton.enabled = supported;
           });
 
-          navigator.xr.requestSession('inline').then((session) => {
-              onSessionStarted(session);
-            });
+          navigator.xr.requestSession('inline').then(onSessionStarted);
+
         }
       }
 
@@ -194,6 +193,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       function onSelect() {
         scene.addNode(solarSystem);
+        xrImmersiveRefSpace = inlineViewerHelper.referenceSpace;
         reticle.visible = false;
         session.isImmersive = true;
       }
