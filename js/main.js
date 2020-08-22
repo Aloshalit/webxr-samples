@@ -193,10 +193,10 @@ function initCameraStream() {
   var constraints = {
     audio: false,
     video: {
-      width: { ideal: size },
-      height: { ideal: size },
-      //width: { min: 1024, ideal: window.innerWidth, max: 1920 },
-      //height: { min: 776, ideal: window.innerHeight, max: 1080 },
+      //width: { ideal: size },
+      //height: { ideal: size },
+      width: { min: 1024, ideal: window.innerWidth, max: 1920 },
+      height: { min: 776, ideal: window.innerHeight, max: 1080 },
       facingMode: currentFacingMode,
     },
   };
