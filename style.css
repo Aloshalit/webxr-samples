@@ -17,6 +17,7 @@ body {
 }
 
 #gui_controls {
+  display: none;
   position: fixed;
   background-color: #111; /*rgba(255, 0, 0, 0.5);*/
   z-index: 2;
@@ -59,8 +60,8 @@ button {
 }
 
 #takePhotoButton {
-  /* left: calc(50% - 40px);
-  top: calc(50% - 40px); */
+  left: calc(50% - 40px);
+  top: calc(50% - 40px);
   display: none;
   width: 1px;
   height: 1px;
