@@ -38,7 +38,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         <summary>הנחיות</summary>
         <p>
             כוונו את המצלמה בקו ישר, ממרחק של שני מטרים, למקום בן יהיה תלוי הפריט ולחצו על ״מקם״.
-            9
+            11
           <a class="back" href="./">Back</a>
         </p>
       </details>
@@ -148,8 +148,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             .then((session) => {
               xrButton.setSession(session);
               session.isImmersive = true;
-              scene.addNode(solarSystem);
-              reticle.visible = false;
               onSessionStarted(session);
             });
       }
@@ -178,12 +176,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       function onSessionStarted(session) {
         session.addEventListener('end', onSessionEnded);
-        session.addEventListener('select', onSelect);
+        //session.addEventListener('select', onSelect);
 
         if (session.isImmersive) {
           // When in 'immersive-ar' mode don't draw an opaque background because
           // we want the real world to show through.
           //skybox.visible = false;
+              scene.addNode(solarSystem);
+              reticle.visible = false;
         }
 
         initGL();
