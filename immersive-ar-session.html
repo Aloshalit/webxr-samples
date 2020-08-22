@@ -164,6 +164,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         session.updateRenderState({ baseLayer: new XRWebGLLayer(session, gl) });
 
         let refSpaceType = session.isImmersive ? 'local' : 'viewer';
+        session.requestReferenceSpace('viewer').then((refSpace) => {
+          inlineViewerHelper = new InlineViewerHelper(gl.canvas, refSpace);
+          //session.requestAnimationFrame(onXRFrame);
+        });
         session.requestReferenceSpace('local').then((refSpace) => {
             xrImmersiveRefSpace = refSpace;
           // if (session.isImmersive) {
@@ -171,10 +175,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           // } else {
           //   inlineViewerHelper = new InlineViewerHelper(gl.canvas, refSpace);
           // }
-          // session.requestAnimationFrame(onXRFrame);
-        });
-        session.requestReferenceSpace('viewer').then((refSpace) => {
-          inlineViewerHelper = new InlineViewerHelper(gl.canvas, refSpace);
           session.requestAnimationFrame(onXRFrame);
         });
       }
