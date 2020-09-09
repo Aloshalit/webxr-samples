@@ -97,8 +97,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let solarSystem = new Gltf2Node({url: 'media/gltf/test/output_1.glb'});
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
-      //solarSystem.scale = [1.1, 1.1, 1.1];
-      solarSystem.translation = [0, 0, -7];
+      solarSystem.scale = [0.5, 0.5, 1.1];
+      solarSystem.translation = [0, 0, -3];
       //solarSystem.rotation = [0, 0, -1, 1];
       //scene.addNode(solarSystem);
       // Still adding a skybox, but only for the benefit of the inline view.
