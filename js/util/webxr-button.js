@@ -233,7 +233,7 @@ const generateCSS = (options, fontSize=18)=> {
         color: ${options.color};
         position: relative;
         font-size: ${fontSize}px;
-        padding: 2px;
+        padding: 10px 20px;
         transition: color 0.5s;
     }
 
