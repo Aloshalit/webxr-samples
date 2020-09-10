@@ -239,8 +239,7 @@ const generateCSS = (options, fontSize=18)=> {
         color: ${options.color};
         position: relative;
         font-size: ${fontSize}px;
-        padding-left: ${height}px;
-        padding-right: ${(borderRadius - 10 < 5) ? height / 3 : borderRadius - 10}px;
+        padding: 5px;
         transition: color 0.5s;
     }
 
