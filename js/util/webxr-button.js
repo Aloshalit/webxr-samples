@@ -192,8 +192,6 @@ const generateCSS = (options, fontSize=18)=> {
         box-sizing: border-box;
         background: ${options.background ? options.background : 'none'};
 
-        height: ${height}px;
-        min-width: ${fontSize * 9.6}px;
         display: inline-block;
         position: relative;
 
@@ -239,7 +237,7 @@ const generateCSS = (options, fontSize=18)=> {
         color: ${options.color};
         position: relative;
         font-size: ${fontSize}px;
-        padding: 5px;
+        padding: 10px;
         transition: color 0.5s;
     }
 
