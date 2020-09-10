@@ -97,7 +97,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let solarSystem = new Gltf2Node({url: 'media/gltf/test/output_1.glb'});
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
-      solarSystem.scale = [0.25, 0.25, 1.1];
+      //solarSystem.scale = [0.25, 0.25, 1.1];
       solarSystem.translation = [0, 0, -2];
       //solarSystem.rotation = [0, 0, -1, 1];
       //scene.addNode(solarSystem);
@@ -170,6 +170,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         onResize();
 
         renderer = new Renderer(gl);
+        renderer.globalLightDir(new Float32Array([0, -0.1, -0.3]));
 
         scene.setRenderer(renderer);
       }
