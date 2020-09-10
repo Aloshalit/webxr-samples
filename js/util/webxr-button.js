@@ -57,7 +57,7 @@ let _WEBXR_UI_CSS_INJECTED = {};
  * @private
  */
 const generateInnerHTML = (cssPrefix, height)=> {
-  const logoHeight = height*_LOGO_SCALE;
+  const logoHeight = 0; //height*_LOGO_SCALE;
   const svgString = generateXRIconString(cssPrefix, logoHeight) + generateNoXRIconString(cssPrefix, logoHeight);
 
   return `<button class="${cssPrefix}-button">
