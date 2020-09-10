@@ -208,13 +208,9 @@ const generateCSS = (options, fontSize=18)=> {
     */
 
     .${cssPrefix}-logo {
-        width: ${height}px;
-        height: ${height}px;
         position: absolute;
         top:0px;
         left:0px;
-        width: ${height - 4}px;
-        height: ${height - 4}px;
     }
     .${cssPrefix}-svg {
         fill: ${options.color};
