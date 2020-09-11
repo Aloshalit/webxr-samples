@@ -215,7 +215,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       function onSessionEnded(event) {
         if (event.session.isImmersive) {
-          xrButton.setSession(null);
+        alert("sessionend");
+        solarSystem.scale = [2, 2, 1];
+        //scene.removeNode(solarSystem);
+        //reticle.visible = true;
+        xrButton.setSession(null);
           // Turn the background back on when we go back to the inlive view.
           //skybox.visible = true;
         }
