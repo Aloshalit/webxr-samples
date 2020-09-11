@@ -100,6 +100,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       solarSystem.scale = [2, 2, 1];
       solarSystem.translation = [0, 0, -2];
       //solarSystem.rotation = [0, 0, -1, 1];
+      solarSystem.visible = true;
       scene.addNode(solarSystem);
       // Still adding a skybox, but only for the benefit of the inline view.
       //let skybox = new SkyboxNode({url: 'media/gltf/test/scene_u9.glb'});
@@ -109,7 +110,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       reticle.scale = [0.4, 0.4, 0.2];
       reticle.translation = [0, 0.2, -2.1];
       reticle.visible = false;
-      scene.addNode(reticle);
+      //scene.addNode(reticle);
 
       function initXR() {
         xrButton = new WebXRButton({
@@ -120,7 +121,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           textExitXRTitle: "EXIT  AR",
         });
         document.querySelector('header').appendChild(xrButton.domElement);
-        //document.querySelector('body').appendChild(<Button onClick={placeElement}>PIN</Button>);
 
         if (navigator.xr) {
           // Checks to ensure that 'immersive-ar' mode is available, and only
@@ -133,11 +133,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
         }
       }
-
-      function placeElement() {
-        scene.addNode(solarSystem);
-      }
-      //document.querySelector('header').appendChild(xrButton.domElement);
 
       function onRequestSession() {
         // Requests an 'immersive-ar' session, which ensures that the users
