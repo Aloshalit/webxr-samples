@@ -96,7 +96,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let solarSystem = new Gltf2Node({url: 'media/gltf/test/output_1.glb'});
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
-      solarSystem.scale = [1.5, 1.5, 1];
+      solarSystem.scale = [2, 2, 1];
       solarSystem.translation = [0, 0, -2];
       //solarSystem.rotation = [0, 0, -1, 1];
       scene.addNode(solarSystem);
@@ -175,6 +175,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       }
 
       function onSessionStarted(session) {
+        session.addEventListener('selectStart', onSessionEnded);
         session.addEventListener('end', onSessionEnded);
         //session.addEventListener('select', onSelect);
 
@@ -202,7 +203,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         });
       }
 
+      function onSelectStart() {}
+
       function onEndSession(session) {
+        solarSystem.scale = [2, 2, 1];
         scene.removeNode(solarSystem);
         reticle.visible = true;
         session.end();
