@@ -94,6 +94,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let scene = new Scene();
       scene.enableStats(false);
       let solarSystem = new Gltf2Node({url: 'media/gltf/test/output_1.glb'});
+      solarSystem.onSelect(() => {});
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
       solarSystem.scale = [2, 2, 1];
@@ -175,7 +176,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       }
 
       function onSessionStarted(session) {
-        session.addEventListener('selectStart', onSessionEnded);
+        session.addEventListener('selectStart', onSelectStart);
         session.addEventListener('end', onSessionEnded);
         //session.addEventListener('select', onSelect);
 
