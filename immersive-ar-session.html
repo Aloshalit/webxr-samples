@@ -185,8 +185,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           // we want the real world to show through.
           //skybox.visible = false;
           solarSystem.scale = [1, 1, 1];
-          scene.addNode(solarSystem);
-          reticle.visible = false;
+          //scene.addNode(solarSystem);
+          //reticle.visible = false;
         }
 
         initGL();
@@ -207,16 +207,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       function onSelectStart() {}
 
       function onEndSession(session) {
-        alert("sessionend");
-        solarSystem.scale = [2, 2, 1];
-        scene.removeNode(solarSystem);
-        reticle.visible = true;
         session.end();
       }
 
       function onSessionEnded(event) {
         if (event.session.isImmersive) {
-        alert("sessionend");
+        //alert("sessionend");
         solarSystem.scale = [2, 2, 1];
         //scene.removeNode(solarSystem);
         //reticle.visible = true;
