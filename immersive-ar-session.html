@@ -38,7 +38,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         <summary>הנחיות</summary>
         <p>
             כוונו את המצלמה בקו ישר, ממרחק של שני מטרים, למקום בן יהיה תלוי הפריט ולחצו על ״מקם״.
-            הממשק לצורך התרשמות בלבד ולא מחייב גודל או צורת הפריט המוצג.        
+            הממשק נועד לצורך התרשמות בלבד ולא מחייב גודל או צורת הפריט המוצג.        
           </p>
       </details>
     </header>    
@@ -206,6 +206,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       function onSelectStart() {}
 
       function onEndSession(session) {
+        alert("sessionend");
         solarSystem.scale = [2, 2, 1];
         scene.removeNode(solarSystem);
         reticle.visible = true;
