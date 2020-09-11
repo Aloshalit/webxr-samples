@@ -172,6 +172,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       function onSessionStarted(session) {
         session.addEventListener('selectStart', onSelectStart);
+        session.addEventListener('select', onSelectStart);
         session.addEventListener('end', onSessionEnded);
         //session.addEventListener('select', onSelect);
 
