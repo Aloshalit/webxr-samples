@@ -99,7 +99,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       //solarSystem.scale = [0.25, 0.25, 1.1];
       solarSystem.translation = [0, 0, -2];
       //solarSystem.rotation = [0, 0, -1, 1];
-      //scene.addNode(solarSystem);
+      scene.addNode(solarSystem);
       // Still adding a skybox, but only for the benefit of the inline view.
       //let skybox = new SkyboxNode({url: 'media/gltf/test/scene_u9.glb'});
       //scene.addNode(skybox);
@@ -107,7 +107,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       reticle.rotation = [1.5, 0, 0, 1];
       reticle.scale = [0.4, 0.4, 0.2];
       reticle.translation = [0, 0.2, -2.1];
-      reticle.visible = true;
+      reticle.visible = false;
       scene.addNode(reticle);
 
       function initXR() {
@@ -202,6 +202,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       }
 
       function onEndSession(session) {
+        scene.removeNode(solarSystem);
+        reticle.visible = true;
         session.end();
       }
 
