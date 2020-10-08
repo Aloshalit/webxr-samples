@@ -108,7 +108,6 @@ canvas {
 
 /* The Close Button */
 .close {
-  display: block;
   float: left;
   margin-bottom: 300px;
   color: rgb(80,168,252);
