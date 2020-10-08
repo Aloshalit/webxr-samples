@@ -88,16 +88,31 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let xrImmersiveRefSpace = null;
       let inlineViewerHelper = null;
 
+      //models data map
+      let modelsData = {"santorini":
+                                    {"url":"media/gltf/test/santorini.glb",
+                                     "scale": 0.3},
+                        "singapore":
+                                    {"url":"media/gltf/test/singapore.glb",
+                                     "scale": 0.4}}
+
+      //parse query param to get macrame model name
+      const urlParams = new URLSearchParams(window.location.search);
+      const model = urlParams.get('model');
+
+      let modelData = modelsData[model];
+      alert(modelData);
+
       // WebGL scene globals.
       let gl = null;
       let renderer = null;
       let scene = new Scene();
       scene.enableStats(false);
-      let solarSystem = new Gltf2Node({url: 'media/gltf/test/output_2.glb'});
+      let solarSystem = new Gltf2Node({url: modelData["url"]});
       solarSystem.onSelect(onSelectStart);
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
-      solarSystem.scale = [2, 2, 1];
+      solarSystem.scale = [2*modelData["scale"], 2*modelData["scale"], 1];
       solarSystem.translation = [0, 0.05, -2];
       //solarSystem.rotation = [0, 0, -1, 1];
       solarSystem.visible = true;
@@ -182,7 +197,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           // we want the real world to show through.
           //skybox.visible = false;
           solarSystem.translation = [0, 0, -2];
-          solarSystem.scale = [1, 1, 1];
+          solarSystem.scale = [modelData["scale"], modelData["scale"], 1];
           //scene.addNode(solarSystem);
           //reticle.visible = false;
         }
