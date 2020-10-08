@@ -111,7 +111,7 @@ canvas {
 .close {
   display: block;
   float: left;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
   color: rgb(80,168,252);
   font-size: 18px;
 }
