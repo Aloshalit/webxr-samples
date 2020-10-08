@@ -106,9 +106,10 @@ canvas {
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  display: block;
+  color: #3333FF;
   float: right;
-  font-size: 28px;
+  font-size: 18px;
   font-weight: bold;
 }
 
