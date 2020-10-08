@@ -110,7 +110,7 @@ canvas {
 .close {
   display: block;
   float: left;
-  color: #8888FF;
+  color: rgb(80,168,252);
   font-size: 18px;
 }
 
