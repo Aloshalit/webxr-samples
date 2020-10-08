@@ -109,7 +109,7 @@ canvas {
 /* The Close Button */
 .close {
   float: left;
-  margin-bottom: 300px;
+  margin-bottom: 10px;
   color: rgb(80,168,252);
   font-size: 18px;
 }
