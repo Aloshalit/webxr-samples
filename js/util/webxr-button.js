@@ -193,7 +193,7 @@ const generateCSS = (options, fontSize=18)=> {
         background: ${options.background ? options.background : 'none'};
 
         display: block;
-        position: relative;
+        padding-bottom: 5px;
 
         cursor: pointer;
         transition: border 0.5s;
