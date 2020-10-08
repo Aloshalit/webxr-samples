@@ -192,7 +192,7 @@ const generateCSS = (options, fontSize=18)=> {
         box-sizing: border-box;
         background: ${options.background ? options.background : 'none'};
 
-        display: inline-block;
+        display: block;
         position: relative;
 
         cursor: pointer;
