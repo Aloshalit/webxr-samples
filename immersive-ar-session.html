@@ -103,7 +103,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let modelData = modelsData[model];
       let modelUrl = modelData["url"];
       let modelScale = parseFloat(modelData["scale"]);
-      alert(modelScale);
 
       // WebGL scene globals.
       let gl = null;
@@ -115,7 +114,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
       solarSystem.scale = [2*modelScale, 2*modelScale, 1];
-      solarSystem.translation = [0, 0.05, -2];
+      solarSystem.translation = [0, 0.2, -2];
       //solarSystem.rotation = [0, 0, -1, 1];
       solarSystem.visible = true;
       scene.addNode(solarSystem);
@@ -228,7 +227,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       function onSessionEnded(event) {
         if (event.session.isImmersive) {
         //alert("sessionend");
-        solarSystem.translation = [0, 0.05, -2];
+        solarSystem.translation = [0, 0.2, -2];
         solarSystem.scale = [2*modelScale, 2*modelScale, 1];
         //scene.removeNode(solarSystem);
         //reticle.visible = true;
