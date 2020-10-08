@@ -37,7 +37,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       <details open>
         <summary>הנחיות</summary>
         <p>
-            כוונו את המצלמה בקו ישר, ממרחק של שני מטרים, למקום בן יהיה תלוי הפריט ולחצו על ״מקם״.
+            כוונו את המצלמה בקו ישר, ממרחק של שלושה מטרים, למקום בן יהיה תלוי הפריט ולחצו על ״מקם״.
             הממשק נועד לצורך התרשמות בלבד ולא מחייב גודל או צורת הפריט המוצג.        
           </p>
       </details>
@@ -75,6 +75,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       import {InlineViewerHelper} from './js/util/inline-viewer-helper.js';
       import {Gltf2Node} from './js/render/nodes/gltf2.js';
       import {QueryArgs} from './js/util/query-args.js';
+
+      alert("עמדו במרחק של שלושה מטרים מהמקום בן יהיה תלוי הפריט, כוונו את המצלמה בקו ישר ולחצו על ״מקם״." + "/n" + "/n" +
+     " הממשק נועד לצורך התרשמות בלבד ולא מחייב גודל או צורת הפריט המוצג.");
 
       // If requested, use the polyfill to provide support for mobile devices
       // and devices which only support WebVR.
@@ -114,7 +117,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       // The solar system is big (citation needed). Scale it down so that users
       // can move around the planets more easily.
       solarSystem.scale = [2*modelScale, 2*modelScale, 1];
-      solarSystem.translation = [0, 0.17, -2];
+      solarSystem.translation = [0, 0.17, -3];
       //solarSystem.rotation = [0, 0, -1, 1];
       solarSystem.visible = true;
       scene.addNode(solarSystem);
@@ -197,7 +200,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           // When in 'immersive-ar' mode don't draw an opaque background because
           // we want the real world to show through.
           //skybox.visible = false;
-          solarSystem.translation = [0, 0, -2];
+          solarSystem.translation = [0, 0, -3];
           solarSystem.scale = [modelData["scale"], modelData["scale"], 1];
           //scene.addNode(solarSystem);
           //reticle.visible = false;
@@ -227,7 +230,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       function onSessionEnded(event) {
         if (event.session.isImmersive) {
         //alert("sessionend");
-        solarSystem.translation = [0, 0.17, -2];
+        solarSystem.translation = [0, 0.17, -3];
         solarSystem.scale = [2*modelScale, 2*modelScale, 1];
         //scene.removeNode(solarSystem);
         //reticle.visible = true;
