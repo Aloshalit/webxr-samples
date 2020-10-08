@@ -98,6 +98,7 @@ canvas {
 /* Modal Content */
 .modal-content {
   text-align: right;
+  direction: rtl;
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
