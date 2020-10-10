@@ -153,7 +153,8 @@ const generateNoXRIconString = (cssPrefix, height)=>{
 const generateCSS = (options, fontSize=18)=> {
   const height = options.height;
   const borderWidth = 2;
-  const borderColor = options.background ? options.background : options.color;
+  /*const borderColor = options.background ? options.background : options.color;*/
+  const borderColor = options.color;
   const cssPrefix = options.cssprefix;
 
   let borderRadius;
