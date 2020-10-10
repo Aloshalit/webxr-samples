@@ -306,7 +306,7 @@ export class WebXRButton {
     options = options || {};
 
     options.color = options.color || 'rgb(80,168,252)';
-    options.background = options.background || false;
+    options.background = options.background || 'rgba(255,255,255,0.8)';
     options.disabledOpacity = options.disabledOpacity || 0.5;
     options.height = options.height || 55;
     options.corners = options.corners || 'square';
