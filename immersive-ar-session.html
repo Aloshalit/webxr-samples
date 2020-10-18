@@ -109,6 +109,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                                      "scale": 0.27},
                         "rhino":
                                     {"url":"media/gltf/test/rhino.glb",
+                                     "scale": 0.2},
+                        "heart":
+                                    {"url":"media/gltf/test/heart.glb",
                                      "scale": 0.2}}
 
       //parse query param to get macrame model name
@@ -242,7 +245,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       function onSessionEnded(event) {
         if (event.session.isImmersive) {
         //alert("sessionend");
-        solarSystem.translation = [0, 0.17, -3];
+        solarSystem.translation = [0, 0.18, -3];
         solarSystem.scale = [2*modelScale, 2*modelScale, 1];
         //scene.removeNode(solarSystem);
         //reticle.visible = true;
