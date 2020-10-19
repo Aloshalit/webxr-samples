@@ -185,8 +185,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
               session.isImmersive = true;
               onSessionStarted(session);
             },(ex) => {
-              alert("Failed to start immersive AR session.");
-              console.error(ex.message);
+              alert(ex.message);
             });
       }
 
