@@ -63,6 +63,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         ></button>
       </div>
     </div>
+    <div class="overlay">
+
+    </div>
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
@@ -173,7 +176,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         // environment will be visible either via video passthrough or a
         // transparent display. This may be presented either in a headset or
         // fullscreen on a mobile device.
-        return navigator.xr.requestSession('immersive-ar')
+        return navigator.xr.requestSession('immersive-ar', {
+                optionalFeatures: ['dom-overlay'],
+                domOverlay: {root: document.getElementById('overlay')}
+            })
             .then((session) => {
               xrButton.setSession(session);
               session.isImmersive = true;
