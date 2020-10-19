@@ -33,15 +33,18 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     <title>Immersive AR Session</title>
   </head>
   <body>
-    <header>
-      <!-- <details open>
-        <summary>הנחיות</summary>
-        <p>
-            כוונו את המצלמה בקו ישר, ממרחק של שלושה מטרים, למקום בן יהיה תלוי הפריט ולחצו על ״מקם״.
-            הממשק נועד לצורך התרשמות בלבד ולא מחייב גודל או צורת הפריט המוצג.        
-          </p>
-      </details> -->
-    </header>    
+    <div id="overlay">
+      <header>
+        <!-- <details open>
+          <summary>הנחיות</summary>
+          <p>
+              כוונו את המצלמה בקו ישר, ממרחק של שלושה מטרים, למקום בן יהיה תלוי הפריט ולחצו על ״מקם״.
+              הממשק נועד לצורך התרשמות בלבד ולא מחייב גודל או צורת הפריט המוצג.        
+            </p>
+        </details> -->
+      </header>    
+      <div class="panel"></div>
+    </div>
     <div id="container">
       <div id="vid_container">
         <video id="video" autoplay playsinline></video>
@@ -63,9 +66,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         ></button>
       </div>
     </div>
-    <div id="overlay" class="overlay">
 
-    </div>
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
