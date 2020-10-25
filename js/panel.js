@@ -8,11 +8,16 @@ class Panel extends React.Component {
   }
 
   render() {
-    return e(
-      'div',
-      { class: "panel", className: "panel" },
-      'Like'
-    );
+    // return e(
+    //   'div',
+    //   { class: "panel", className: "panel" },
+    //   'Like'
+    // );
+    return (
+        <div className="panel">
+            Like
+        </div>
+      );
   }
 }
 
