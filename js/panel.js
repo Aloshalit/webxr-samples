@@ -25,4 +25,4 @@ class Panel extends React.Component {
 
 const domContainer = document.querySelector('#panel-container');
 ReactDOM.render(React.createElement(Panel), domContainer);
-//document.getElementById("panel-container").addEventListener('panelinteract', e => console.log(e.detail.text));
+//document.getElementById("panel-container").addEventListener('panelinteract', e => alert(e.detail.text));
