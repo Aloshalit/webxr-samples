@@ -108,7 +108,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let inlineViewerHelper = null;
 
       //models data map
-      let modelsData = {"santorini":
+      const modelsData = {"santorini":
                                     {"url":"media/gltf/test/santorini.glb",
                                      "scale": 0.46},
                         "singapore":
@@ -318,10 +318,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         alert(text);
 
 
-        let modelData = modelsData["heart"];
-        let modelUrl = modelData["url"];
-        let modelScale = parseFloat(modelData["scale"]);
-        let newNode = new Gltf2Node({url: modelUrl});
+        let newModelData = modelsData['heart'];
+        let newUrl = newModelData["url"];
+        let newModelScale = parseFloat(newModelData["scale"]);
+        let newNode = new Gltf2Node({url: newUrl});
+        newNode.translation = [0, 0, -3];
+        newNode.scale = [newModelScale, newModelScale, 1];
         scene.addNode(newNode);
         scene.removeNode(solarSystem);
       }
