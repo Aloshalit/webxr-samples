@@ -81,7 +81,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     </div>
     <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="js/Panel.js"></script>
+    <script src="js/panel.js"></script>
     <script src="js/adapter.min.js"></script>
     <script src="js/screenfull.min.js"></script>
     <script src="js/howler.core.min.js"></script>
@@ -94,7 +94,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       import {InlineViewerHelper} from './js/util/inline-viewer-helper.js';
       import {Gltf2Node} from './js/render/nodes/gltf2.js';
       import {QueryArgs} from './js/util/query-args.js';
-      import {Panel} from './js/Panel.js';
 
       // If requested, use the polyfill to provide support for mobile devices
       // and devices which only support WebVR.
@@ -315,8 +314,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         }
       }
 
-      const domContainer = document.querySelector('#panel-container');
-      ReactDOM.render(React.createElement(Panel,{a:"b"}), domContainer);
+      document.getElementById("panel-container").addEventListener('panelinteract', e => console.log(e.detail.text));
     </script>
   </body>
 </html>
