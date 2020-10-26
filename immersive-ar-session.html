@@ -314,7 +314,19 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         }
       }
 
-      document.getElementById("panel-container").addEventListener('panelinteract', e => alert(e.detail.text));
+      function onInteract(text) {
+        alert(text);
+
+
+        let modelData = modelsData["heart"];
+        let modelUrl = modelData["url"];
+        let modelScale = parseFloat(modelData["scale"]);
+        let newNode = new Gltf2Node({url: modelUrl});
+        scene.addNode(newNode);
+        scene.removeNode(solarSystem);
+      }
+
+      document.getElementById("panel-container").addEventListener('panelinteract', e => onInteract(e.detail.text));
     </script>
   </body>
 </html>
