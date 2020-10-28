@@ -1,3 +1,6 @@
+import Carousel from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
+
 'use strict';
 
 const eventPanelInteract = new CustomEvent ('panelinteract' ,{
@@ -18,7 +21,12 @@ class Panel extends React.Component {
     return e(
       'div',
       { class: "panel", className: "panel", onClick: e => e.target.dispatchEvent(eventPanelInteract)  },
-      'Like'
+      ['Like',
+       React.createElement(Carousel, {}, [  React.createElement('img', { src: 'media/thumbnails/cave.png'}),
+                                            React.createElement('img', { src: 'media/thumbnails/space.png'})
+                                          ]
+                          )
+      ]    
     );
   }
 }
