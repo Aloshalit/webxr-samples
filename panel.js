@@ -50,7 +50,13 @@ var Panel = function (_React$Component) {
         { className: 'panel', onClick: function onClick(e) {
             return e.target.dispatchEvent(eventPanelInteract);
           } },
-        'Like'
+        React.createElement(
+          Carousel,
+          null,
+          React.createElement('img', { src: 'media/thumbnails/cave.png' }),
+          React.createElement('img', { src: 'media/thumbnails/space.png' }),
+          React.createElement('img', { src: 'media/thumbnails/cube-room.png' })
+        )
       );
     }
   }]);

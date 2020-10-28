@@ -31,7 +31,11 @@ class Panel extends React.Component {
   render() {
     return (
       <div className="panel" onClick={ e => e.target.dispatchEvent(eventPanelInteract) }>
-        Like
+        <Carousel>
+          <img src="media/thumbnails/cave.png" />
+          <img src="media/thumbnails/space.png" />
+          <img src="media/thumbnails/cube-room.png" />
+        </Carousel>
       </div>
     );
   }
