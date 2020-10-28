@@ -22,7 +22,8 @@ class Panel extends React.Component {
       'div',
       { class: "panel", className: "panel", onClick: e => e.target.dispatchEvent(eventPanelInteract)  },
       ['Like',
-       React.createElement(Carousel, {}, [  React.createElement('img', { src: 'media/thumbnails/cave.png'}),
+       React.createElement(Carousel, {}, 
+                                          [  React.createElement('img', { src: 'media/thumbnails/cave.png'}),
                                             React.createElement('img', { src: 'media/thumbnails/space.png'})
                                           ]
                           )
