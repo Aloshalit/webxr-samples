@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Carousel from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
+//import React from 'react';
+//import ReactDOM from 'react-dom';
+//import Carousel from '@brainhubeu/react-carousel';
+//import '@brainhubeu/react-carousel/lib/style.css';
 
 'use strict';
 
@@ -33,11 +33,12 @@ class Panel extends React.Component {
   render() {
     return (
       <div className="panel" onClick={ e => e.target.dispatchEvent(eventPanelInteract) }>
-        <Carousel>
+        Like
+        {/* <Carousel>
           <img src="media/thumbnails/cave.png" />
           <img src="media/thumbnails/space.png" />
           <img src="media/thumbnails/cube-room.png" />
-        </Carousel>
+        </Carousel> */}
       </div>
     );
   }
