@@ -25,16 +25,33 @@ var Panel = function (_React$Component) {
     _classCallCheck(this, Panel);
 
     return _possibleConstructorReturn(this, (Panel.__proto__ || Object.getPrototypeOf(Panel)).call(this, props));
-    //alert(props.a);
-    //test();
   }
+
+  // render() {
+  //   return e(
+  //     'div',
+  //     { class: "panel", className: "panel", onClick: e => e.target.dispatchEvent(eventPanelInteract)  },
+  //     ['Like',
+  //      React.createElement(Carousel, {}, 
+  //                                         [ React.createElement('img', { src: 'media/thumbnails/cave.png'}),
+  //                                           React.createElement('img', { src: 'media/thumbnails/space.png'})
+  //                                         ]
+  //                         )
+  //     ]    
+  //   );
+  // }
+
 
   _createClass(Panel, [{
     key: 'render',
     value: function render() {
-      return e('div', { class: "panel", className: "panel", onClick: function onClick(e) {
-          return e.target.dispatchEvent(eventPanelInteract);
-        } }, ['Like', React.createElement(Carousel, {}, [React.createElement('img', { src: 'media/thumbnails/cave.png' }), React.createElement('img', { src: 'media/thumbnails/space.png' })])]);
+      return React.createElement(
+        'div',
+        { className: 'panel', onClick: function onClick(e) {
+            return e.target.dispatchEvent(eventPanelInteract);
+          } },
+        'Like'
+      );
     }
   }]);
 

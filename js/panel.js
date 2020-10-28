@@ -13,21 +13,26 @@ const e = React.createElement;
 class Panel extends React.Component {
   constructor(props) {
     super(props);
-    //alert(props.a);
-    //test();
   }
 
+  // render() {
+  //   return e(
+  //     'div',
+  //     { class: "panel", className: "panel", onClick: e => e.target.dispatchEvent(eventPanelInteract)  },
+  //     ['Like',
+  //      React.createElement(Carousel, {}, 
+  //                                         [ React.createElement('img', { src: 'media/thumbnails/cave.png'}),
+  //                                           React.createElement('img', { src: 'media/thumbnails/space.png'})
+  //                                         ]
+  //                         )
+  //     ]    
+  //   );
+  // }
   render() {
-    return e(
-      'div',
-      { class: "panel", className: "panel", onClick: e => e.target.dispatchEvent(eventPanelInteract)  },
-      ['Like',
-       React.createElement(Carousel, {}, 
-                                          [  React.createElement('img', { src: 'media/thumbnails/cave.png'}),
-                                            React.createElement('img', { src: 'media/thumbnails/space.png'})
-                                          ]
-                          )
-      ]    
+    return (
+      <div className="panel" onClick={ e => e.target.dispatchEvent(eventPanelInteract) }>
+        Like
+      </div>
     );
   }
 }
