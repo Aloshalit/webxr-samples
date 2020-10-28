@@ -10,8 +10,8 @@
     "@brainhubeu/react-carousel": "~1.19.26",
     "babel-cli": "~6.26.0",
     "babel-preset-react-app": "~3.1.2",
-    "react": "~17.0.1",
-    "react-dom": "~17.0.1"
+    "react": "~17.0.0",
+    "react-dom": "~17.0.0"
   },
   "devDependencies": {},
   "scripts": {

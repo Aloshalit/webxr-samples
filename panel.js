@@ -49,7 +49,7 @@ var Panel = function (_React$Component) {
     value: function render() {
       return React.createElement(
         'div',
-        { className: 'panel', onClick: function onClick(e) {
+        { 'class': 'panel', onClick: function onClick(e) {
             return e.target.dispatchEvent(eventPanelInteract);
           } },
         'Like'
