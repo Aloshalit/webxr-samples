@@ -26,7 +26,10 @@ var Panel = function (_React$Component) {
   function Panel(props) {
     _classCallCheck(this, Panel);
 
-    return _possibleConstructorReturn(this, (Panel.__proto__ || Object.getPrototypeOf(Panel)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Panel.__proto__ || Object.getPrototypeOf(Panel)).call(this, props));
+
+    console.log(window);
+    return _this;
   }
 
   // render() {
@@ -52,7 +55,14 @@ var Panel = function (_React$Component) {
         { 'class': 'panel', onClick: function onClick(e) {
             return e.target.dispatchEvent(eventPanelInteract);
           } },
-        'Like'
+        'Like',
+        React.createElement(
+          'react-carousel'.Carousel,
+          null,
+          React.createElement('img', { src: 'media/thumbnails/cave.png' }),
+          React.createElement('img', { src: 'media/thumbnails/space.png' }),
+          React.createElement('img', { src: 'media/thumbnails/cube-room.png' })
+        )
       );
     }
   }]);

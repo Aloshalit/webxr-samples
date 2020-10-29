@@ -15,6 +15,7 @@ const e = React.createElement;
 class Panel extends React.Component {
   constructor(props) {
     super(props);
+    console.log(window);
   }
 
   // render() {
@@ -34,11 +35,11 @@ class Panel extends React.Component {
     return (
       <div class="panel" onClick={ e => e.target.dispatchEvent(eventPanelInteract) }>
         Like
-        {/* <Carousel>
+        <react-carousel.Carousel>
           <img src="media/thumbnails/cave.png" />
           <img src="media/thumbnails/space.png" />
           <img src="media/thumbnails/cube-room.png" />
-        </Carousel> */}
+        </react-carousel.Carousel>
       </div>
     );
   }
